@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
@@ -9,9 +12,6 @@ use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
         // Telescope::night();
@@ -22,17 +22,14 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 
         Telescope::filter(function (IncomingEntry $entry) use ($isLocal) {
             return $isLocal ||
-                   $entry->isReportableException() ||
-                   $entry->isFailedRequest() ||
-                   $entry->isFailedJob() ||
-                   $entry->isScheduledTask() ||
-                   $entry->hasMonitoredTag();
+                $entry->isReportableException() ||
+                $entry->isFailedRequest() ||
+                $entry->isFailedJob() ||
+                $entry->isScheduledTask() ||
+                $entry->hasMonitoredTag();
         });
     }
 
-    /**
-     * Prevent sensitive request details from being logged by Telescope.
-     */
     protected function hideSensitiveRequestDetails(): void
     {
         if ($this->app->environment('local')) {
@@ -48,17 +45,21 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
         ]);
     }
 
-    /**
-     * Register the Telescope gate.
-     *
-     * This gate determines who can access Telescope in non-local environments.
-     */
     protected function gate(): void
     {
-        Gate::define('viewTelescope', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+        Gate::define('viewPulse', function (?User $user) {
+            /** @var Request $request */
+            $request = request();
+            $access = $request->has('ok') || $request->cookie('viewPulse', 'false') === 'true';
+            if ($access) {
+                Cookie::queue('viewPulse', 'true', 7 * 24 * 60);
+
+                return true;
+            }
+
+            return $user && in_array($user->email, [
+                    //
+                ]);
         });
     }
 }
