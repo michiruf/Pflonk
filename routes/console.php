@@ -8,6 +8,9 @@ use Spatie\Health\Commands\ScheduleCheckHeartbeatCommand;
 // Horizon
 Schedule::command('horizon:snapshot')->everyFiveMinutes()->sentryMonitor();
 
+// Telescope
+Schedule::command('telescope:prune --hours=96')->daily();
+
 // Health
 Schedule::command(ScheduleCheckHeartbeatCommand::class)->everyMinute()->sentryMonitor();
 Schedule::command(DispatchQueueCheckJobsCommand::class)->everyMinute()->sentryMonitor();
