@@ -2,5 +2,5 @@
 @section('title', 'Index')
 
 @section('content')
-    <livewire:contact-form/>
+    Hello World!
 @endsection
