@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductResource\Pages;
+use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
-use App\Models\Product;
+use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,11 +12,11 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
-class ProductResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Product::class;
+    protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $navigationGroup = 'Data';
 
@@ -29,13 +29,8 @@ class ProductResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('ean')
-                            ->helperText('The EAN number / barcode of the product')
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
-                        Forms\Components\FileUpload::make('image_path')
-                            ->label('Image')
+                        Forms\Components\FileUpload::make('icon_path')
+                            ->label('Icon')
                             ->image()
                             ->imageEditor()
                             ->imageEditorAspectRatios([
@@ -47,25 +42,7 @@ class ProductResource extends Resource
                             ->directory('product')
                             ->visibility('public')
                             ->moveFiles() // move instead of copying tmp files
-                            ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file, Product $record) => "$record->id.{$file->extension()}"),
-                        Forms\Components\Repeater::make('productCategories')
-                            ->label('Categories')
-                            ->relationship()
-                            ->schema([
-                                Forms\Components\Select::make('category_id')
-                                    ->relationship('category', 'name')
-                                    ->required(),
-                            ]),
-                        Forms\Components\Toggle::make('include_category_in_related_products'),
-                        Forms\Components\Repeater::make('productRelatedProducts')
-                            ->label('Related products')
-                            ->relationship()
-                            ->schema([
-                                Forms\Components\Select::make('related_id')
-                                    ->label('Product')
-                                    ->relationship('related', 'name')
-                                    ->required(),
-                            ]),
+                            ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file, Category $record) => "$record->id.{$file->extension()}"),
                     ])
                     ->columnSpan(2),
 
@@ -75,7 +52,6 @@ class ProductResource extends Resource
                             ->disabled(),
                         Forms\Components\DateTimePicker::make('updated_at')
                             ->disabled(),
-                        Forms\Components\Toggle::make('is_active')
                     ])
                     ->columnSpan(1),
             ])
@@ -86,19 +62,15 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_path')
-                    ->name('Image')
+                Tables\Columns\ImageColumn::make('icon_path')
+                    ->label('Icon')
                     ->visibility('public')
                     ->circular()
-                    ->defaultImageUrl(url('/images/product_placeholder.png'))
+                    ->defaultImageUrl(url('/images/category_placeholder.png'))
                     ->grow(false),
-                Tables\Columns\TextColumn::make('ean')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->grow(),
-                Tables\Columns\TextColumn::make('categories.name')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->since()
@@ -109,14 +81,9 @@ class ProductResource extends Resource
                     ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
             ])
             ->filters([
-                Tables\Filters\TernaryFilter::make('is_active')
-                    ->placeholder('All')
-                    ->trueLabel('Active')
-                    ->falseLabel('Not active')
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -138,9 +105,9 @@ class ProductResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProducts::route('/'),
-            'create' => Pages\CreateProduct::route('/create'),
-            'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'index' => Pages\ListCategory::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }
