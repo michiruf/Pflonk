@@ -9,11 +9,20 @@
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
 <body>
+
+@include('layouts.include.header')
+
 <main class="container mx-auto">
     @yield('content')
 </main>
 
+@include('layouts.include.footer')
+
 @livewireScripts
 @vite('resources/js/app.js')
+@stack('scripts')
 </body>
 </html>
+
+
+@script

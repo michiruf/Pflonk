@@ -4,5 +4,5 @@
 @section('content')
     @include('layouts.include.hero')
 
-    <livewire:product-list/>
+    Hello Imprint!
 @endsection

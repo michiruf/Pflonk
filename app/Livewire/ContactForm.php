@@ -2,20 +2,30 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ContactFormData;
+use App\Mail\ContactFormMailable;
 use Illuminate\View\View;
 use Livewire\Component;
 
 class ContactForm extends Component
 {
-    public string $name;
+    public ContactFormData $form;
 
-    public string $email;
+    public function submit(): void
+    {
+        $contactData = $this->validate();
 
-    public string $phone;
+        // TODO
+        //\Illuminate\Support\Facades\Mail::to('andre@andre.com')->send(new ContactFormMailable($contact));
 
-    public string $message;
+        session()->flash('status', 'We received your message successfully and will get back to you shortly!');
+        $this->resetForm();
+    }
 
-    public ?string $successMessage;
+    private function resetForm(): void
+    {
+        $this->form->reset();
+    }
 
     public function render(): View
     {
