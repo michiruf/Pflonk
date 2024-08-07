@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_path')->nullable();
             $table->json('additional_data')->nullable();
+            $table->boolean('include_category_in_related_products');
             $table->boolean('is_active');
             $table->timestamps();
 
