@@ -17,6 +17,7 @@ class ProductFactory extends Factory
         return [
             'ean' => fake()->regexify('[0-9]{13}'),
             'name' => fake()->words(2, true),
+            'include_category_in_related_products' => false,
             'is_active' => true,
         ];
     }

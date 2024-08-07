@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -31,6 +32,20 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Product::factory(10)->create();
+        Category::factory()->create(['name' => 'Beer']);
+        Category::factory()->createOne(['name' => 'Soft Drink']);
+        Category::factory()->createOne(['name' => 'Wine']);
+        Category::factory()->createOne(['name' => 'Garnish']);
+
+        Product::factory()->create(['name' => 'Meckatzer Äss'])->productCategories()->create(['category_id' => 1]);
+        tap(Product::factory()->create(['name' => 'Meckatzer Äss Alkoholfrei'])->productCategories())->create(['category_id' => 1])->create(['category_id' => 2]);
+        Product::factory()->create(['name' => 'Lambrusco Perlwein'])->productCategories()->create(['category_id' => 3]);
+        Product::factory()->create(['name' => 'Bierbankgarnitur'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Kühlschrank'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Kühlhänger'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Sonnenschirm'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Durchlaufkühler'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Aschenbecher'])->productCategories()->create(['category_id' => 4]);
+        Product::factory()->create(['name' => 'Ausschankwagen'])->productCategories()->create(['category_id' => 4]);
     }
 }
