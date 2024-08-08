@@ -8,8 +8,8 @@ import:
   - contrib/npm.php
 
 config:
-  application: 'catch-all-subdirectories'
-  repository: 'https://github.com/michiruf/Pflonk.git'
+  application: 'pflonk'
+  repository: 'git@github.com/michiruf/Pflonk.git'
   # This fixes errors with not being sudo or having acl installed
   # https://github.com/deployphp/deployer/issues/1506
   writable_mode: chmod
