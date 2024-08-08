@@ -7,11 +7,13 @@
         <div class="flex-1">
             <a class="btn btn-ghost text-xl">daisyUI</a>
         </div>
+
         <div class="flex-none gap-2 mx-2">
             <div class="form-control">
                 <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto"/>
             </div>
         </div>
+
         <div class="flex-none gap-2 mx-2">
             <button class="btn btn-circle" data-toggle-theme="dark,light">
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +30,7 @@
                 </svg>
             </button>
         </div>
+
         <div class="flex-none gap-2 mx-2">
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-circle">
@@ -60,6 +63,7 @@
                 </div>
             </div>
         </div>
+
         <div class="flex-none gap-2 mx-2">
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">

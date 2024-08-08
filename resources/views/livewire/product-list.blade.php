@@ -1,6 +1,7 @@
 <div>
     <label class="input input-bordered flex items-center gap-2">
-        <input wire:model="textFilter" type="text" class="grow" placeholder="Search Product"/>
+        <input wire:model.live.debounce.100ms="textFilter" type="text" class="grow"
+               placeholder="Search Product"/>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -13,9 +14,22 @@
         </svg>
     </label>
 
-    <ul>
+    <ul class="flex flex-wrap items-center justify-center gap-5">
+        <li wire:click="setCategoryFilter(null)"
+            class="btn {{ $categoryFilter === null ? 'btn-active' : '' }}">
+            All
+        </li>
         @foreach($categories as $category)
-            <li wire:click="$set('categoryFilter', {{ $category->id }})">{{ $category->name }}</li>
+            <li wire:click="setCategoryFilter({{ $category->id }})"
+                class="btn {{ $categoryFilter === $category->id ? 'btn-active' : '' }}">
+                @if($category->icon_path)
+                    <figure class="h-6 w-6">
+                        <img src="{{ Storage::url($category->icon_path) }}" alt="{{ $category->name }}"/>
+                    </figure>
+                @endif
+
+                {{ $category->name }}
+            </li>
         @endforeach
     </ul>
 
@@ -26,7 +40,7 @@
             <li class="card card-compact bg-base-100 shadow-xl">
                 @if($product->image_path)
                     <figure>
-                        <img src="{{ Storage::url($product->image_path) }}" alt="{{ $product->name }}" />
+                        <img src="{{ Storage::url($product->image_path) }}" alt="{{ $product->name }}"/>
                     </figure>
                 @endif
                 <div class="card-body">
@@ -37,7 +51,6 @@
                     </div>
                 </div>
             </li>
-
         @endforeach
     </ul>
 </div>
