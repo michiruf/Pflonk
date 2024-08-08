@@ -19,5 +19,10 @@ jobs:
         with:
           coverage: true
 
+      - name: Start MySQL
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS pflonk_test;'
+
       - name: Run Tests
         run: php artisan test --exclude-group=long-running,wip,deploy -v --coverage
