@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -75,7 +74,7 @@ class ProductResource extends Resource
                             ->disabled(),
                         Forms\Components\DateTimePicker::make('updated_at')
                             ->disabled(),
-                        Forms\Components\Toggle::make('is_active')
+                        Forms\Components\Toggle::make('is_active'),
                     ])
                     ->columnSpan(1),
             ])
@@ -116,7 +115,7 @@ class ProductResource extends Resource
                 Tables\Filters\TernaryFilter::make('is_active')
                     ->placeholder('All')
                     ->trueLabel('Active')
-                    ->falseLabel('Not active')
+                    ->falseLabel('Not active'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

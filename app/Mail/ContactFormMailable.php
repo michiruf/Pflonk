@@ -1,4 +1,5 @@
 <?php
+
 // @see https://github.com/laracasts/lc-livewire-examples/blob/master/app/Mail/ContactFormMailable.php
 //
 //

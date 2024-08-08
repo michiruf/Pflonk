@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
 use Livewire\Component;
 
@@ -18,6 +17,7 @@ class ProductList extends Component
     {
         if ($this->categoryFilter === $categoryId) {
             $this->categoryFilter = null;
+
             return;
         }
 
@@ -40,7 +40,7 @@ class ProductList extends Component
         }
 
         return view(
-            "livewire.product-list",
+            'livewire.product-list',
             [
                 'categories' => Category::all(),
                 'products' => $query->get(),

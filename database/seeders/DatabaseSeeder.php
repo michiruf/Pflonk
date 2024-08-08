@@ -21,9 +21,7 @@ class DatabaseSeeder extends Seeder
         }
     }
 
-    private function seedMandatoryData(): void
-    {
-    }
+    private function seedMandatoryData(): void {}
 
     private function seedLocalData(): void
     {

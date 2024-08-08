@@ -58,8 +58,8 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
             }
 
             return $user && in_array($user->email, [
-                    //
-                ]);
+                //
+            ]);
         });
     }
 }
