@@ -47,12 +47,12 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 
     protected function gate(): void
     {
-        Gate::define('viewPulse', function (?User $user) {
+        Gate::define('viewTelescope', function (?User $user) {
             /** @var Request $request */
             $request = request();
-            $access = $request->has('ok') || $request->cookie('viewPulse', 'false') === 'true';
+            $access = $request->has('ok') || $request->cookie('viewTelescope', 'false') === 'true';
             if ($access) {
-                Cookie::queue('viewPulse', 'true', 7 * 24 * 60);
+                Cookie::queue('viewTelescope', 'true', 7 * 24 * 60);
 
                 return true;
             }
