@@ -68,8 +68,7 @@ tasks:
     - run: /opt/docker/bin/service.d/laravel-artisan.sh pulse:restart
     - desc: Interrupt the laravel pulse worker
   npm:build:
-    script:
-      - 'cd {{release_or_current_path}} && npm run build'
+    - run: cd {{release_or_current_path}} && npm run build
 
 after:
   deploy:failed: deploy:unlock
