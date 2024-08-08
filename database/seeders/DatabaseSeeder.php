@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::factory()->create(['name' => 'Beer']);
-        Category::factory()->createOne(['name' => 'Soft Drink']);
-        Category::factory()->createOne(['name' => 'Wine']);
-        Category::factory()->createOne(['name' => 'Garnish']);
+        Category::factory()->create(['name' => 'Soft Drink']);
+        Category::factory()->create(['name' => 'Wine']);
+        Category::factory()->create(['name' => 'Garnish']);
 
         Product::factory()->create(['name' => 'Meckatzer Äss'])->productCategories()->create(['category_id' => 1]);
         tap(Product::factory()->create(['name' => 'Meckatzer Äss Alkoholfrei'])->productCategories())->create(['category_id' => 1])->create(['category_id' => 2]);

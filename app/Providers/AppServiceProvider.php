@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
         $isStaging = config('app.env') === 'staging' || str(config('app.url'))->contains('staging');
         if ($isProduction || $isStaging) {
             URL::forceScheme('https');
+
+            // Set that the request was made via https, because else signatures cannot get validated
+            request()->server->set('HTTPS', request()->header('X-Forwarded-Proto', 'https') == 'https' ? 'on' : 'off');
         }
     }
 }
