@@ -19,6 +19,14 @@ runs:
     - name: Install Dependencies
       uses: ramsey/composer-install@v3
 
+    - name: Install NPM Dependencies
+      shell: sh
+      run: npm install
+
+    - name: Build Vite
+      shell: sh
+      run: npm run build
+
     - name: Create Dotenv
       shell: sh
       run: cp .env.example .env
