@@ -9,7 +9,7 @@ import:
 
 config:
   application: 'pflonk'
-  repository: 'git@github.com/michiruf/Pflonk.git'
+  repository: 'https://github.com/michiruf/Pflonk.git'
   # This fixes errors with not being sudo or having acl installed
   # https://github.com/deployphp/deployer/issues/1506
   writable_mode: chmod
