@@ -4,13 +4,15 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
-Route::get('/', fn () => view('index'));
-Route::get('/contact', fn () => view('contact'));
+Route::view('/', 'index')->name('index');
+Route::view('/products', 'products')->name('products');
+Route::view('/contact', 'contact')->name('contact');
+Route::view('/location', 'location')->name('location');
+Route::view('/service', 'service')->name('service');
 
 // Legal stuff
-Route::get('/cookie-policy', fn () => view('static.cookie-policy'));
-Route::get('/privacy-policy', fn () => view('static.privacy-policy'));
-Route::get('/terms-of-use', fn () => view('static.terms-of-use'));
+Route::view('/imprint', 'static.imprint')->name('imprint');
+Route::view('/privacy', 'static.privacy')->name('privacy');
 
 // Filament
 Route::redirect('/login', '/admin/login')->name('login'); // filament needs a 'login' route after logout

@@ -2,8 +2,6 @@
 @section('title', 'Index')
 
 @section('content')
-    @include('layouts.include.hero')
-
     <div class="max-w-lg mx-auto lg:max-w-none">
         <div class="relative bg-white mt-8">
             <div class="absolute inset-0">

@@ -10,11 +10,14 @@
 </head>
 <body>
 
+<!-- TODO Remove? -->
+<div class="fixed top-2 right-2 z-[10001]">
+    @include('layouts.include.switch-theme')
+</div>
+
 @include('layouts.include.header')
 
-<main class="container mx-auto">
-    @yield('content')
-</main>
+@yield('content')
 
 @include('layouts.include.footer')
 
