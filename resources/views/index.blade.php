@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="hero min-h-screen"
-         style="background-image: url({{ asset('images/hero.webp') }});">
+         style="background-image: url({{ asset('images/hero2_cut.png') }});">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-neutral-content text-center">
             <div class="max-w-lg">
@@ -14,7 +14,7 @@
                 <p class="text-xl my-4">
                     Ihr Getränkehandel in Owingen.
                 </p>
-                <img src="{{ asset('images/hero_logo.png') }}"
+                <img src="{{ asset('images/hero_logo_white.png') }}"
                      class="h-screen/5 inline-block"/>
                 <p class="my-6">
                     Sie legen Wert auf eine große Auswahl an Getränken? Sie möchten sich Ihre Getränke nach Hause

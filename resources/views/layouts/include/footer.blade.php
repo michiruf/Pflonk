@@ -17,7 +17,7 @@
             </nav>
             <nav>
                 <a href="{{ route('index') }}" class="link">
-                    <img src="{{ asset('images/logo.png') }}" alt="Getränke Allweyer"
+                    <img src="{{ asset('images/logo_white.png') }}" alt="Getränke Allweyer"
                          class="h-20"/>
                 </a>
             </nav>

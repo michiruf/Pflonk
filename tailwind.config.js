@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
     ],
     theme: {
         extend: {},
@@ -14,21 +14,19 @@ export default {
     daisyui: {
         themes: [
             {
-                mytheme: {
-                    "primary": "#facc15",
-                    "secondary": "#fde047",
-                    "accent": "#ff00ff",
-                    "neutral": "#e0f2fe",
-                    "base-100": "#ffffff",
-                    "info": "#67e8f9",
-                    "success": "#bef264",
-                    "warning": "#fde047",
-                    "error": "#f87171",
-                    "--rounded-btn": "0", // border width of buttons
-                },
+                light: {
+                    ...require('daisyui/src/theming/themes')['light'],
+                    '--rounded-btn': '0', // btn border-radius
+                    '--rounded-box': '0', // card border-radius
+                }
             },
-            'light',
-            'dark',
+            // {
+            //     dark: {
+            //         ...require('daisyui/src/theming/themes')['dark'],
+            //         '--rounded-btn': '0', // btn border-radius
+            //         '--rounded-box': '0', // card border-radius
+            //     }
+            // }
         ],
     },
 }
