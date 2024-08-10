@@ -33,7 +33,7 @@
         </svg>
     </label>
 
-    <ul class="grid grid-cols-4 gap-10 my-5">
+    <ul class="grid grid-cols-4 gap-10 my-20">
         @foreach($products as $product)
             <li class="card card-compact bg-base-100 shadow-xl">
                 @if($product->image_path)
