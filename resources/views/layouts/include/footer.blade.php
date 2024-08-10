@@ -8,7 +8,7 @@
                 </p>
                 <p>
                     E-Mail: info@getraenke-allweyer.de<br>
-                    Tel.: 07551 / TODO
+                    Tel.: 07551 / 4309
                 </p>
                 <p>
                     <a href="{{ route('imprint') }}" class="link link-hover">Impressum</a> |
@@ -24,21 +24,36 @@
             <nav>
                 <h6 class="footer-title">Öffnungszeiten</h6>
                 <p class="font-medium">
-                    Hinzistobler Str. 12<br>
-                    88212 Ravensburg
+                    Schmidtengässle 5<br>
+                    88696 Owingen
                 </p>
 
-                <h6 class="text-xs">Montag bis Donnerstag</h6>
-                <p>
-                    8:30 – 12:30 Uhr,<br>
-                    13:30 – 18:00 Uhr
-                </p>
-
-                <h6 class="text-xs">Freitag</h6>
-                <p>8:00 – 18:00 Uhr</p>
-
-                <h6 class="text-xs">Samstag</h6>
-                <p>8:00 – 13:00 Uhr</p>
+                <table>
+                    <tr>
+                        <td class="pr-3">Montag</td>
+                        <td> 08:30 - 12:00, 15:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3">Dienstag</td>
+                        <td> 08:30 - 12:00, 15:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3">Mittwoch</td>
+                        <td> 08:30 - 12:00</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3">Donnerstag</td>
+                        <td> 08:30 - 12:00, 15:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3">Freitag</td>
+                        <td> 08:30 - 12:00, 15:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-3">Samstag</td>
+                        <td> 08:30 - 12:00</td>
+                    </tr>
+                </table>
             </nav>
         </footer>
     </div>
