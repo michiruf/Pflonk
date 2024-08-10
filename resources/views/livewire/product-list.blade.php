@@ -1,4 +1,4 @@
-<div>
+<div class="my-20">
     <ul class="flex flex-wrap items-center justify-center gap-5 my-3">
         <li wire:click="setCategoryFilter(null)"
             class="btn {{ $categoryFilter === null ? 'btn-active' : '' }}">
@@ -43,10 +43,23 @@
                 @endif
                 <div class="card-body">
                     <h2 class="card-title">{{ $product->name }}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
+                    @if($product->hasAdditionalData('description'))
+                        <p>{{ $product->getAdditionalData('description') }}</p>
+                    @endif
+                    @if($categoryFilter === null && $product->categories()->exists())
+                        <ul class="card-actions justify-start">
+                            @foreach($product->categories()->get() as $category)
+                                <li wire:click="setCategoryFilter({{ $category->id }})"
+                                    class="badge badge-outline cursor-pointer">{{ $category->name }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    @if($product->price)
+                        <div class="card-actions justify-end">
+                            <!-- TODO Will be a button in the future, so we keep it for now -->
+                            <div class="btn btn-primary cursor-default">{{ $product->price }}</div>
+                        </div>
+                    @endif
                 </div>
             </li>
         @endforeach

@@ -11,9 +11,9 @@
 <body>
 
 <!-- TODO Remove? -->
-<div class="fixed top-2 right-2 z-[10001]">
-    @include('layouts.include.switch-theme')
-</div>
+{{--<div class="fixed top-2 right-2 z-[10001]">--}}
+{{--    @include('layouts.include.switch-theme')--}}
+{{--</div>--}}
 
 @include('layouts.include.header')
 

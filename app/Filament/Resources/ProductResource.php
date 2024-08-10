@@ -33,6 +33,9 @@ class ProductResource extends Resource
                             ->required()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
+                        Forms\Components\TextInput::make('price')
+                            ->numeric()
+                            ->minValue(0),
                         Forms\Components\FileUpload::make('image_path')
                             ->label('Image')
                             ->image()

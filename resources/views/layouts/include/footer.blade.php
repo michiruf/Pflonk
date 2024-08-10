@@ -1,6 +1,6 @@
 <div class="bg-neutral">
     <div class="container mx-auto py-10">
-        <footer class="footer text-neutral-content">
+        <footer class="footer text-neutral-content justify-between">
             <nav>
                 <h6 class="footer-title">Getranke Allweyer</h6>
                 <p>

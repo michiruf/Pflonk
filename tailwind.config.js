@@ -18,6 +18,7 @@ export default {
                     ...require('daisyui/src/theming/themes')['light'],
                     '--rounded-btn': '0', // btn border-radius
                     '--rounded-box': '0', // card border-radius
+                    '--rounded-badge': '0' // badge border-radius
                 }
             },
             // {

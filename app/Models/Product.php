@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use WendellAdriel\Lift\Attributes\Cast;
 use WendellAdriel\Lift\Attributes\Fillable;
@@ -33,6 +34,9 @@ class Product extends Model
     #[Rules(['required', 'string'], ['required' => 'The Product name cannot be empty'])]
     #[Fillable]
     public string $name;
+
+    #[Fillable]
+    public ?string $price;
 
     #[Fillable]
     public ?string $image_path;
@@ -85,5 +89,23 @@ class Product extends Model
     public function productRelatedProducts(): HasMany
     {
         return $this->hasMany(ProductRelatedProduct::class);
+    }
+
+    public function hasAdditionalData(?string $index): bool
+    {
+        if (! $index) {
+            return ! empty($this->additional_data);
+        }
+
+        return Arr::accessible($this->additional_data) && Arr::exists($this->additional_data, $index);
+    }
+
+    public function getAdditionalData(?string $index, ?string $default = null): mixed
+    {
+        if (! $index) {
+            return $this->additional_data;
+        }
+
+        return Arr::get($this->additional_data, $index, $default);
     }
 }
