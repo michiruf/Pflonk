@@ -26,7 +26,7 @@ class ProductList extends Component
 
     public function render(): View
     {
-        $query = Product::query()->with('categories');
+        $query = Product::query()->whereIsActive(true)->with('categories');
 
         $textFiler = str($this->textFilter)->trim();
         if ($textFiler->isNotEmpty()) {
