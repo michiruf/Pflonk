@@ -48,7 +48,7 @@
                     @endif
                     @if($categoryFilter === null && $product->categories()->exists())
                         <ul class="card-actions justify-start">
-                            @foreach($product->categories()->get() as $category)
+                            @foreach($product->categories as $category)
                                 <li wire:click="setCategoryFilter({{ $category->id }})"
                                     class="badge badge-outline cursor-pointer">{{ $category->name }}</li>
                             @endforeach
@@ -57,7 +57,7 @@
                     @if($product->price)
                         <div class="card-actions justify-end">
                             <!-- TODO Will be a button in the future, so we keep it for now -->
-                            <div class="btn btn-primary cursor-default">{{ $product->price }}</div>
+                            <div class="btn btn-primary cursor-default">{{ $product->price }} €</div>
                         </div>
                     @endif
                 </div>

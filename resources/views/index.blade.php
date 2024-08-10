@@ -33,7 +33,7 @@
                     <p class="my-6">
                         Regionale Produkte sind super.
                     </p>
-                    <a href="{{ route('products') }}" class="btn btn-primary">Zu den Produkten</a>
+                    <a href="{{ route('products') }}" class="btn btn-primary">Zum Sortiment</a>
                 </div>
             </div>
 
