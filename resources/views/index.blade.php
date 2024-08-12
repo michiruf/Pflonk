@@ -33,7 +33,7 @@
                     <p class="my-6">
                         Regionale Produkte sind super.
                     </p>
-                    <a href="{{ route('products') }}" class="btn btn-primary">Zum Sortiment</a>
+                    <a href="{{ route('products') }}" class="btn btn-primary" wire:navigate.hover>Zum Sortiment</a>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
                         liefern lassen? Ihnen fehlt noch das passende Equipment für Ihr Fest? Hier sind Sie genau
                         richtig.
                     </p>
-                    <a href="{{ route('location') }}" class="btn btn-primary">Mehr Infos</a>
+                    <a href="{{ route('location') }}" class="btn btn-primary" wire:navigate.hover>Mehr Infos</a>
                 </div>
             </div>
         </div>

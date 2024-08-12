@@ -11,12 +11,12 @@
                     Tel.: 07551 / 4309
                 </p>
                 <p>
-                    <a href="{{ route('imprint') }}" class="link link-hover">Impressum</a> |
-                    <a href="{{ route('privacy') }}" class="link link-hover">Datenschutz</a>
+                    <a href="{{ route('imprint') }}" class="link link-hover" wire:navigate.hover>Impressum</a> |
+                    <a href="{{ route('privacy') }}" class="link link-hover" wire:navigate.hover>Datenschutz</a>
                 </p>
             </nav>
             <nav>
-                <a href="{{ route('index') }}" class="link">
+                <a href="{{ route('index') }}" class="link" wire:navigate.hover>
                     <img src="{{ asset('images/logo_white.png') }}" alt="Getränke Allweyer"
                          class="h-20"/>
                 </a>
