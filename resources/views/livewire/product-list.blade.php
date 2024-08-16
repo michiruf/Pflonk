@@ -46,7 +46,7 @@
                     @if($product->hasAdditionalData('description'))
                         <p>{{ $product->getAdditionalData('description') }}</p>
                     @endif
-                    @if($categoryFilter === null && $product->categories()->exists())
+                    @if($categoryFilter === null && $product->categories->isNotEmpty())
                         <ul class="card-actions justify-start">
                             @foreach($product->categories as $category)
                                 <li wire:click="setCategoryFilter({{ $category->id }})"
