@@ -60,7 +60,7 @@ class Product extends Model
     public Carbon $updated_at;
 
     /**
-     * @return BelongsToMany<Category, Product>
+     * @return BelongsToMany<Category>
      */
     public function categories(): BelongsToMany
     {
@@ -68,7 +68,7 @@ class Product extends Model
     }
 
     /**
-     * @return HasMany<ProductCategory, Product>
+     * @return HasMany<ProductCategory>
      */
     public function productCategories(): HasMany
     {
@@ -76,7 +76,7 @@ class Product extends Model
     }
 
     /**
-     * @return BelongsToMany<Category, Product>
+     * @return BelongsToMany<Product>
      */
     public function relatedProducts(): BelongsToMany
     {
@@ -84,7 +84,7 @@ class Product extends Model
     }
 
     /**
-     * @return HasMany<ProductCategory, Product>
+     * @return HasMany<ProductRelatedProduct>
      */
     public function productRelatedProducts(): HasMany
     {
