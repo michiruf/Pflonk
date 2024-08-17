@@ -11,11 +11,7 @@ class User extends \Illuminate\Foundation\Auth\User implements FilamentUser
 {
     use HasFactory, Notifiable;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     protected $hidden = [
         'password',

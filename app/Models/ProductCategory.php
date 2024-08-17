@@ -4,21 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
-use WendellAdriel\Lift\Attributes\IgnoreProperties;
-use WendellAdriel\Lift\Lift;
 
-#[IgnoreProperties('fillable', 'pivotParent')]
 class ProductCategory extends Pivot
 {
-    use Lift;
+    public $guarded = [];
 
-    //#[PrimaryKey]
-    //public int $id;
+    public $incrementing = true;
 
-    // This must be marked manually and also ignored by lift
-    public $fillable = [
-        'product_id',
-        'category_id',
+    public $casts = [
+        'id' => 'integer',
+        'product_id' => 'integer',
+        'category_id' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function product(): BelongsTo

@@ -8,34 +8,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Carbon;
-use WendellAdriel\Lift\Attributes\Cast;
-use WendellAdriel\Lift\Attributes\Fillable;
-use WendellAdriel\Lift\Attributes\Rules;
-use WendellAdriel\Lift\Lift;
 
 #[ObservedBy(CategoryObserver::class)]
 class Category extends Model
 {
-    use HasFactory, Lift;
+    use HasFactory;
 
-    //#[PrimaryKey]
-    //public int $id;
+    public $guarded = [];
 
-    #[Rules(['required', 'string'], ['required' => 'The Category name cannot be empty'])]
-    #[Fillable]
-    public string $name;
+    public $casts = [
+        'id' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'integer',
+    ];
 
-    #[Fillable]
-    public ?string $icon_path;
-
-    #[Cast('datetime')]
-    #[Fillable]
-    public Carbon $created_at;
-
-    #[Cast('datetime')]
-    #[Fillable]
-    public Carbon $updated_at;
+    // TODO This is not used, but was existent using Lift, so we transformed this to the array to persist for later
+    public $rules = [
+        'name' => 'required: The Category name cannot be empty',
+    ];
 
     /**
      * @return BelongsToMany<Product, Category>
