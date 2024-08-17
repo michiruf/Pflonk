@@ -7,6 +7,12 @@
         "framework"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/michiruf/laravel-ide-helper-companion.git"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "filament/filament": "^3.2",
@@ -21,7 +27,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
-        "barryvdh/laravel-ide-helper": "^3.1",
+        "michiruf/laravel-ide-helper-companion": "dev-main",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.9",
         "laravel/pint": "^1.13",
