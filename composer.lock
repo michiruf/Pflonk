@@ -9598,12 +9598,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michiruf/laravel-ide-helper-companion.git",
-                "reference": "48983e82c5c7736d3450eb4d7066260db375a830"
+                "reference": "41816817adaa977410f692007bb7b6ff53b7c79d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michiruf/laravel-ide-helper-companion/zipball/48983e82c5c7736d3450eb4d7066260db375a830",
-                "reference": "48983e82c5c7736d3450eb4d7066260db375a830",
+                "url": "https://api.github.com/repos/michiruf/laravel-ide-helper-companion/zipball/41816817adaa977410f692007bb7b6ff53b7c79d",
+                "reference": "41816817adaa977410f692007bb7b6ff53b7c79d",
                 "shasum": ""
             },
             "require": {
@@ -9693,7 +9693,7 @@
                     "url": "https://github.com/Michael Ruf"
                 }
             ],
-            "time": "2024-08-17T19:25:08+00:00"
+            "time": "2024-08-18T01:23:36+00:00"
         },
         {
             "name": "mockery/mockery",
