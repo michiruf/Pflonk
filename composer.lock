@@ -9704,19 +9704,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michiruf/laravel-ide-helper-companion.git",
-                "reference": "a0c71852055eca6f65d91238867c7bda380d97c2"
+                "reference": "3dd2999ef10f356f9aa7000f28031e72f34e131a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michiruf/laravel-ide-helper-companion/zipball/a0c71852055eca6f65d91238867c7bda380d97c2",
-                "reference": "a0c71852055eca6f65d91238867c7bda380d97c2",
+                "url": "https://api.github.com/repos/michiruf/laravel-ide-helper-companion/zipball/3dd2999ef10f356f9aa7000f28031e72f34e131a",
+                "reference": "3dd2999ef10f356f9aa7000f28031e72f34e131a",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/laravel-ide-helper": "^3.1",
-                "barryvdh/reflection-docblock": "^2.1",
                 "illuminate/contracts": "^10.0||^11.0",
-                "michiruf/laravel-collection-differ": "dev-main",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.16"
             },
@@ -9789,8 +9787,7 @@
             "homepage": "https://github.com/michiruf/laravel-ide-helper-companion",
             "keywords": [
                 "laravel",
-                "laravel-ide-helper-companion",
-                "michiruf"
+                "laravel-ide-helper-companion"
             ],
             "support": {
                 "source": "https://github.com/michiruf/laravel-ide-helper-companion/tree/main",
@@ -9802,7 +9799,7 @@
                     "url": "https://github.com/Michael Ruf"
                 }
             ],
-            "time": "2024-08-29T17:49:25+00:00"
+            "time": "2024-08-18T03:23:43+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -10662,16 +10659,16 @@
         },
         {
             "name": "phpmyadmin/sql-parser",
-            "version": "5.9.1",
+            "version": "5.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmyadmin/sql-parser.git",
-                "reference": "169a9f11f1957ea36607c9b29eac1b48679f1ecc"
+                "reference": "91d980ab76c3f152481e367f62b921adc38af451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmyadmin/sql-parser/zipball/169a9f11f1957ea36607c9b29eac1b48679f1ecc",
-                "reference": "169a9f11f1957ea36607c9b29eac1b48679f1ecc",
+                "url": "https://api.github.com/repos/phpmyadmin/sql-parser/zipball/91d980ab76c3f152481e367f62b921adc38af451",
+                "reference": "91d980ab76c3f152481e367f62b921adc38af451",
                 "shasum": ""
             },
             "require": {
@@ -10745,7 +10742,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-08-13T19:01:01+00:00"
+            "time": "2024-08-29T20:56:34+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
