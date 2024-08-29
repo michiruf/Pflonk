@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Index')
+@section('title', 'Standort')
 
 @section('content')
     <div class="hero min-h-96"

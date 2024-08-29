@@ -9,6 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * 
+ *
+ * @property string $id
+ * @property string $name
+ * @property string $icon_path
+ * @property string $created_at
+ * @property string $updated_at
+ */
 #[ObservedBy(CategoryObserver::class)]
 class Category extends Model
 {
@@ -28,7 +37,7 @@ class Category extends Model
     ];
 
     /**
-     * @return BelongsToMany<Product, Category>
+     * @return BelongsToMany<Product>
      */
     public function products(): BelongsToMany
     {
@@ -36,7 +45,7 @@ class Category extends Model
     }
 
     /**
-     * @return HasMany<ProductCategory, Category>
+     * @return HasMany<ProductCategory>
      */
     public function productCategories(): HasMany
     {

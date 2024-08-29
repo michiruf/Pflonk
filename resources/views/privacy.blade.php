@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Index')
+@section('title', 'Datenschutz')
 
 @section('content')
-    Hello Imprint!
+    Hello Privacy!
 @endsection

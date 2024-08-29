@@ -5,8 +5,10 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\View\View;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Product List')]
 class ProductList extends Component
 {
     public string $textFilter = '';
@@ -31,8 +33,7 @@ class ProductList extends Component
         $textFiler = str($this->textFilter)->trim();
         if ($textFiler->isNotEmpty()) {
             $query->whereLike('name', "%{$textFiler->toString()}%");
-            //$query->orWhereLike('price', "%{$textFiler->toString()}%");
-            // NOTE Maybe add the price as well
+            $query->orWhereLike('price', "%{$textFiler->toString()}%");
         }
 
         if ($this->categoryFilter) {

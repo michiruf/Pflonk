@@ -1,5 +1,5 @@
+@php use App\Models\Category; @endphp
 @extends('layouts.app')
-@section('title', 'Index')
 
 @section('content')
     <div class="hero min-h-screen"
@@ -38,6 +38,19 @@
             </div>
 
             <div class="h-full">
+                <ul class="flex flex-wrap items-center justify-center gap-5 my-3">
+                    @foreach(Category::all() as $category)
+                        <li class="btn" wire:key="{{ $category->id }}">
+                            @if($category->icon_path)
+                                <figure class="h-6 w-6">
+                                    <img src="{{ Storage::url($category->icon_path) }}" alt="{{ $category->name }}"/>
+                                </figure>
+                            @endif
+
+                            {{ $category->name }}
+                        </li>
+                    @endforeach
+                </ul>
                 Hallo Leute<br><br>
                 Hier können wir die Kategorien oder bestimmte regionale Produkte anzeigen
             </div>

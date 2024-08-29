@@ -5,6 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
+/**
+ * 
+ *
+ * @property string $id
+ * @property string $product_id
+ * @property string $category_id
+ * @property string $created_at
+ * @property string $updated_at
+ */
 class ProductCategory extends Pivot
 {
     public $guarded = [];

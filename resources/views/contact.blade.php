@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Index')
+@section('title', 'Kontakt')
 
 @section('content')
     <div class="max-w-lg mx-auto lg:max-w-none">

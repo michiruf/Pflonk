@@ -11,6 +11,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/michiruf/laravel-ide-helper-companion.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/michiruf/laravel-collection-differ.git"
         }
     ],
     "require": {
@@ -27,6 +31,7 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
         "michiruf/laravel-ide-helper-companion": "dev-main",
+        "michiruf/laravel-collection-differ": "dev-main",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.9",
         "laravel/pint": "^1.13",

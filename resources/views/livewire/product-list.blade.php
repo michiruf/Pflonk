@@ -5,7 +5,8 @@
             All
         </li>
         @foreach($categories as $category)
-            <li wire:click="setCategoryFilter({{ $category->id }})"
+            <li wire:key="{{ $category->id }}"
+                wire:click="setCategoryFilter({{ $category->id }})"
                 class="btn {{ $categoryFilter === $category->id ? 'btn-active' : '' }}">
                 @if($category->icon_path)
                     <figure class="h-6 w-6">
@@ -35,7 +36,8 @@
 
     <ul class="grid grid-cols-4 gap-10 my-20">
         @foreach($products as $product)
-            <li class="card card-compact bg-base-100 shadow-xl">
+            <li wire:key="{{ $product->id }}"
+                class="card card-compact bg-base-100 shadow-xl">
                 @if($product->image_path)
                     <figure>
                         <img src="{{ Storage::url($product->image_path) }}" alt="{{ $product->name }}"/>
@@ -49,7 +51,8 @@
                     @if($categoryFilter === null && $product->categories->isNotEmpty())
                         <ul class="card-actions justify-start">
                             @foreach($product->categories as $category)
-                                <li wire:click="setCategoryFilter({{ $category->id }})"
+                                <li wire:key="{{ $category->id }}"
+                                    wire:click="setCategoryFilter({{ $category->id }})"
                                     class="badge badge-outline cursor-pointer">{{ $category->name }}</li>
                             @endforeach
                         </ul>

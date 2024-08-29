@@ -5,8 +5,10 @@ namespace App\Livewire;
 use App\Livewire\Forms\ContactFormData;
 use App\Mail\ContactFormMailable;
 use Illuminate\View\View;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Contact')]
 class ContactForm extends Component
 {
     public ContactFormData $form;
