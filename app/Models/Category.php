@@ -12,11 +12,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * 
  *
- * @property string $id
+ * @property int $id
  * @property string $name
  * @property string $icon_path
- * @property string $created_at
- * @property string $updated_at
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property int $updated_at
  */
 #[ObservedBy(CategoryObserver::class)]
 class Category extends Model

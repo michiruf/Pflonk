@@ -13,16 +13,16 @@ use Illuminate\Support\Arr;
 /**
  * 
  *
- * @property string $id
+ * @property int $id
  * @property string $ean
  * @property string $name
  * @property string $price
  * @property string $image_path
- * @property string $additional_data
- * @property string $include_category_in_related_products
- * @property string $is_active
- * @property string $created_at
- * @property string $updated_at
+ * @property array $additional_data
+ * @property bool $include_category_in_related_products
+ * @property bool $is_active
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property int $updated_at
  */
 #[ObservedBy(ProductObserver::class)]
 class Product extends Model

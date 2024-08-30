@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 /**
  * 
  *
- * @property string $id
- * @property string $product_id
- * @property string $related_id
- * @property string $created_at
- * @property string $updated_at
+ * @property int $id
+ * @property int $product_id
+ * @property int $related_id
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
  */
 class ProductRelatedProduct extends Pivot
 {

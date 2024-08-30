@@ -7,16 +7,6 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/michiruf/laravel-ide-helper-companion.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/michiruf/laravel-collection-differ.git"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "filament/filament": "^3.2",
@@ -25,13 +15,12 @@
         "laravel/pulse": "^1.2",
         "laravel/telescope": "^5.1",
         "laravel/tinker": "^2.9",
+        "michiruf/laravel-ide-helper-companion": "^0.1.0",
         "sentry/sentry-laravel": "^4.7",
         "spatie/laravel-health": "^1.30"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
-        "michiruf/laravel-ide-helper-companion": "dev-main",
-        "michiruf/laravel-collection-differ": "dev-main",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^2.9",
         "laravel/pint": "^1.13",
