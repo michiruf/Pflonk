@@ -11,8 +11,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Arr;
 
 /**
- * 
- *
  * @property int $id
  * @property string $ean
  * @property string $name
