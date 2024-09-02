@@ -15,7 +15,7 @@
         "laravel/pulse": "^1.2",
         "laravel/telescope": "^5.1",
         "laravel/tinker": "^2.9",
-        "michiruf/laravel-ide-helper-companion": "^0.1.0",
+        "michiruf/laravel-ide-helper-companion": "^0.2-rc1",
         "sentry/sentry-laravel": "^4.7",
         "spatie/laravel-health": "^1.30"
     },
