@@ -11,7 +11,7 @@
                 <h1 class="text-3xl font-bold uppercase my-3">Standort</h1>
                 <div class="divider"></div>
                 <p class="my-6">
-                    Owingengengengengengen ist super cool.
+                    Getränkemarkt im Herzen Owingens
                 </p>
             </div>
         </div>

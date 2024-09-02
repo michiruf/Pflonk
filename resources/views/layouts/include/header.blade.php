@@ -7,8 +7,14 @@
         </div>
 
         <div class="mx-2">
-            <a href="{{ route('service') }}" class="link link-hover" wire:navigate.hover>
-                Festservice
+            <a href="{{ route('products') }}" class="link link-hover" wire:navigate.hover>
+                Sortiment
+            </a>
+        </div>
+
+        <div class="mx-2">
+            <a href="{{ route('hermes') }}" class="link link-hover" wire:navigate.hover>
+                Hermes
             </a>
         </div>
 
@@ -20,8 +26,14 @@
         </div>
 
         <div class="mx-2">
-            <a href="{{ route('products') }}" class="link link-hover" wire:navigate.hover>
-                Sortiment
+            <a href="{{ route('feast-service') }}" class="link link-hover" wire:navigate.hover>
+                Festservice
+            </a>
+        </div>
+
+        <div class="mx-2">
+            <a href="{{ route('delivery-service') }}" class="link link-hover" wire:navigate.hover>
+                Lieferservice
             </a>
         </div>
 
