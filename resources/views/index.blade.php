@@ -15,7 +15,8 @@
                     Ihr Getränkehandel in Owingen.
                 </p>
                 <img src="{{ asset('images/hero_logo_white.png') }}"
-                     class="h-screen/5 inline-block"/>
+                     class="h-screen/5 inline-block"
+                     alt="Logo"/>
                 <p class="my-6">
                     Sie legen Wert auf eine große Auswahl an Getränken? Sie möchten sich Ihre Getränke nach Hause
                     liefern lassen? Ihnen fehlt noch das passende Equipment für Ihr Fest? Hier sind Sie genau richtig.
